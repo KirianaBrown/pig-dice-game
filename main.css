@@ -103,8 +103,13 @@ footer p {
 }
 
 .player-current-box {
-    background-color: #659B8F;
-    color: #fff;
+    /* background-color: #659B8F; */
+    border: 4px solid #659B8f;
+    -webkit-box-shadow: 4px 4px 5px -2px rgba(176, 176, 176, 1);
+    -moz-box-shadow: 4px 4px 5px -2px rgba(176, 176, 176, 1);
+    box-shadow: 4px 4px 5px -2px rgba(176, 176, 176, 1);
+    /* color: #fff; */
+    color: #000;
     width: 40%;
     margin: 0 auto;
     padding: 12px;
