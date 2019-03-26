@@ -1,0 +1,197 @@
+@font-face {
+    font-family: mine;
+    /* src: url("anastasia-script-personal-use.regular.ttf"); */
+    /* src:url("prestige-signature-script-demo.regular.ttf"); */
+    src: url("./src/fonts/Prestige Signature Script - Demo.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+    line-height: 1.7;
+}
+
+body {
+    background-image: url('./src/assets/cool-background.png');
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+    padding: 1em;
+}
+
+h1 {
+    font-family: mine;
+    color: white;
+    font-size: 1em;
+}
+
+footer p {
+    color: white;
+    font-size: 0.6em;
+    padding: 1em;
+}
+
+.game-play-details {
+    padding: 1em;
+}
+
+.game-play-details p {
+    font-size: 0.6em;
+    padding: 0.5em;
+}
+
+.game-container {
+    background-color: white;
+    /* height: 60vh; */
+    width: 1000px;
+    margin: auto;
+    /* box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3); */
+    -webkit-box-shadow: 4px 4px 5px -2px rgba(176, 176, 176, 1);
+    -moz-box-shadow: 4px 4px 5px -2px rgba(176, 176, 176, 1);
+    box-shadow: 4px 4px 5px -2px rgba(176, 176, 176, 1);
+    overflow: hidden;
+}
+
+.player-0-panel,
+.player-1-panel {
+    width: 50%;
+    float: left;
+    height: 600px;
+    padding: 100px;
+}
+
+
+/**********************************************
+*** PLAYERS
+**********************************************/
+
+.player-name {
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 100;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.player-score {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 100;
+    color: #659B8F;
+    margin-bottom: 130px;
+}
+
+.active {
+    background-color: #f7f7f7;
+}
+
+.active .player-name {
+    font-weight: 300;
+}
+
+.active .player-name::after {
+    content: "\2022";
+    font-size: 70px;
+    position: absolute;
+    color: #EB4D4D;
+    top: -46px;
+    right: 20px;
+}
+
+.player-current-box {
+    /* background-color: #659B8F; */
+    border: 4px solid #659B8f;
+    -webkit-box-shadow: 4px 4px 5px -2px rgba(176, 176, 176, 1);
+    -moz-box-shadow: 4px 4px 5px -2px rgba(176, 176, 176, 1);
+    box-shadow: 4px 4px 5px -2px rgba(176, 176, 176, 1);
+    /* color: #fff; */
+    color: #000;
+    width: 40%;
+    margin: 0 auto;
+    padding: 12px;
+    text-align: center;
+}
+
+.player-current-label {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #222;
+}
+
+.player-current-score {
+    font-size: 15px;
+}
+
+button {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #555;
+    background: none;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 300;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    font-weight: 600;
+}
+
+button:hover i {
+    margin-right: 20px;
+}
+
+button:focus {
+    outline: none;
+}
+
+i {
+    color: #659B8F;
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 32px;
+    line-height: 1;
+    vertical-align: text-top;
+    margin-top: -4px;
+    transition: margin 0.3s;
+}
+
+.btn-new {
+    top: 230px;
+}
+
+.btn-roll {
+    top: 603px;
+}
+
+.btn-hold {
+    top: 667px;
+}
+
+.dice {
+    position: absolute;
+    left: 50%;
+    top: 400px;
+    transform: translateX(-50%);
+    height: 100px;
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+}
+
+.winner {
+    background-color: #f7f7f7;
+}
+
+.winner .player-name {
+    font-weight: 300;
+    color: #659B8F;
+}
