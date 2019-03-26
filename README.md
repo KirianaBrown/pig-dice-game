@@ -1,2 +1,2 @@
-# pig-dice-game
-Pig (Dice Game)
+# Pig (Dice Game)
+
