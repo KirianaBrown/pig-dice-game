@@ -26,6 +26,12 @@ h1 {
     font-size: 1em;
 }
 
+footer p {
+    color: white;
+    font-size: 0.6em;
+    padding: 1em;
+}
+
 .game-play-details {
     padding: 1em;
 }
