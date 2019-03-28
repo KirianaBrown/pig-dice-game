@@ -26,6 +26,16 @@ h1 {
     font-size: 1em;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: blue;
+}
+
+#myModal {
+    align: right;
+}
+
 footer p {
     color: white;
     font-size: 0.6em;
