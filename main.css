@@ -40,7 +40,7 @@ header {
 }
 
 footer {
-    padding: 1em;
+    padding: .5em;
 }
 
 footer p {
@@ -75,7 +75,7 @@ footer p {
     width: 50%;
     float: left;
     /* height: 600px; */
-    height: calc(500px);
+    height: calc(520px);
     padding: 60px;
 }
 
