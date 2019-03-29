@@ -116,7 +116,7 @@ footer p {
     font-size: 70px;
     position: absolute;
     color: #EB4D4D;
-    top: -46px;
+    top: -50px;
     right: 20px;
 }
 
@@ -170,7 +170,7 @@ button:hover i {
 }
 
 button:focus {
-    outline: none;
+    outline: none!important;
 }
 
 i {
