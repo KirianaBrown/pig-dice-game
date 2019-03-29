@@ -1,13 +1,15 @@
-// Call random number function following event listener on button
+/*
+
+Click roll dice and generate a random number and set to dice value
+
+*/
+
 
 document.querySelector('.btn-roll').addEventListener('click', function() {
     let randomNumber = Math.floor(Math.random() * 6 + 1);
-    console.log(randomNumber);
+    console.log(randomNumber)
 
-    // Change the dice image 
-
-    let dice = document.querySelector('.dice');
-
-    dice.src = './src/assets/dice-' + randomNumber + '.png';
+    let domDice = document.querySelector('.dice');
+    domDice.src = './src/assets/dice-' + randomNumber + '.png ';
 
 })
