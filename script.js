@@ -28,6 +28,9 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         roundScore += randomNumber;
         // get inner html / text content update
         document.querySelector('#current-' + currentPlayer).textContent = roundScore;
+    } else {
+        roundScore = 0;
+        console.log('You rolled a 1')
     }
 
 
