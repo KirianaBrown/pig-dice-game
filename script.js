@@ -6,7 +6,7 @@ Click roll dice and generate a random number and set to dice value
 
 init();
 
-let globalScore, roundScore, currentPlayer;
+let globalScore, roundScore, currentPlayer, scores;
 
 currentPlayer = 0;
 roundScore = 0;
@@ -62,12 +62,20 @@ function nextPlayer() {
 // hold button - need to add the round score to the global score
 
 document.querySelector('.btn-hold').addEventListener('click', function() {
-    console.log('hold button')
+    console.log('hold button');
+
+    scores[currentPlayer] += roundScore;
+
+    // add round score to the global score;
+    let foo = document.getElementById('score-' + currentPlayer).textContent = scores[currentPlayer];
+
+    nextPlayer();
 
 })
 
 function init() {
     // Set all values = 0.
+    scores = [0, 0];
     document.querySelector('.dice').style.display = 'none';
     document.getElementById('current-0').textContent = '0';
     document.getElementById('current-1').textContent = '0';
