@@ -1,5 +1,14 @@
 /*
-    1. on button roll display a random dice number
+    Pig Dice Game Created by Kiriana Brown 2019
+    Game Rules: If a player rolls a 1 then it is the next players turn, first to 100 wins!  
+*/
+/* GAME LOGIC
+    1. Set up an init function which sets the variables and the game is playing state. 
+    2. on button roll if the game is playing (ie set to true) then display a random dice and add the dice face value to the round score of the current player. 
+    3. if the dice face value is === 1 then round score is 0 and next player function is called. 
+    4. Next player function changes the active state to the current player
+    5. the hold button if game is playing will add the round score value to the total player hand. If the player hand is greater or === to 100 than the winner class is added and the game playing is now set to false
+    6. button new resets the game by calling the init function. 
 */
 
 // ########################################################
@@ -99,7 +108,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
         document.querySelector('#score-' + currentPlayer).textContent = scores[currentPlayer];
 
         // check if score is 100 or greater and declare winner
-        if (scores[currentPlayer] >= 10) {
+        if (scores[currentPlayer] >= 100) {
             console.log('winner')
             document.querySelector('#name-' + currentPlayer).textContent = 'winner!';
             // Hide dice
