@@ -113,11 +113,11 @@ footer p {
 
 .active .player-name::after {
     content: "\2022";
-    font-size: 70px;
+    font-size: 2em;
     position: absolute;
     color: #EB4D4D;
-    top: -50px;
-    right: 20px;
+    top: -20px;
+    right: 40px;
 }
 
 .player-current-box {
@@ -207,9 +207,11 @@ i {
 
 .winner {
     background-color: #f7f7f7;
+    border: 4px solid gold;
 }
 
 .winner .player-name {
-    font-weight: 300;
-    color: #659B8F;
+    font-weight: 500;
+    color: gold;
+    font-size: 2em;
 }
