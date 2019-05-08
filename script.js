@@ -1,16 +1,33 @@
 /*
 
 Click roll dice and generate a random number and set to dice value
+1. On btn roll - draw random number and replace with dice image. Along with this add the score to the current score value box for the active player. 
+2. 
 
 */
 
-init();
-
 let globalScore, roundScore, currentPlayer, scores;
 
-currentPlayer = 0;
-roundScore = 0;
-globalScore = 0;
+// ########################################################
+
+init();
+
+function init() {
+    // Global Scores
+    document.querySelector('#score-0').textContent = 0;
+    document.querySelector('#score-1').textContent = 0;
+    // Round scores
+    document.querySelector('#current-0').textContent = 0;
+    document.querySelector('#current-1').textContent = 0;
+    // set game variables
+    currentPlayer = 0;
+    roundScore = 0;
+    globalScore = 0;
+}
+
+// ########################################################
+
+
 
 
 document.querySelector('.btn-roll').addEventListener('click', function() {
@@ -29,11 +46,11 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     // 3. Add value to round score
 
     if (randomNumber !== 1) {
+        // Add round score
         roundScore += randomNumber;
         // get inner html / text content update
         document.querySelector('#current-' + currentPlayer).textContent = roundScore;
     } else {
-        roundScore = 0;
         console.log('You rolled a 1')
         nextPlayer();
     }
@@ -71,14 +88,14 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
 
     nextPlayer();
 
-})
+});
 
-function init() {
-    // Set all values = 0.
-    scores = [0, 0];
-    document.querySelector('.dice').style.display = 'none';
-    document.getElementById('current-0').textContent = '0';
-    document.getElementById('current-1').textContent = '0';
-    document.getElementById('score-0').textContent = '0';
-    document.getElementById('score-1').textContent = '0';
-}
+// function init() {
+//     // Set all values = 0.
+//     scores = [0, 0];
+//     document.querySelector('.dice').style.display = 'none';
+//     document.getElementById('current-0').textContent = '0';
+//     document.getElementById('current-1').textContent = '0';
+//     document.getElementById('score-0').textContent = '0';
+//     document.getElementById('score-1').textContent = '0';
+// }
