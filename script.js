@@ -23,6 +23,7 @@ function init() {
     currentPlayer = 0;
     roundScore = 0;
     globalScore = 0;
+    scores = [0, 0];
 }
 
 // ########################################################
