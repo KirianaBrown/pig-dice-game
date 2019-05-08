@@ -10,6 +10,8 @@ let globalScore, roundScore, currentPlayer, scores;
 
 // ########################################################
 
+// ********* INIT FUNCTION *********
+
 init();
 
 function init() {
@@ -27,25 +29,19 @@ function init() {
 }
 
 // ########################################################
-
-
-
+// ********* ROLL BUTTON FUNCTION *********
 
 document.querySelector('.btn-roll').addEventListener('click', function() {
-
     // 1. Generate Random Number
     let randomNumber = Math.floor(Math.random() * 6 + 1);
     console.log(randomNumber)
 
     // 2. Update Dice Src and display
-
     let domDice = document.querySelector('.dice');
     domDice.src = './src/assets/dice-' + randomNumber + '.png ';
-
     domDice.style.display = "inline";
 
     // 3. Add value to round score
-
     if (randomNumber !== 1) {
         // Add round score
         roundScore += randomNumber;
@@ -57,6 +53,9 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     }
 
 })
+
+// ########################################################
+// ********* NEXT PLAYER FUNCTION *********
 
 function nextPlayer() {
     // Ternary Function 
@@ -77,7 +76,8 @@ function nextPlayer() {
     document.querySelector('.dice').style.display = 'none';
 }
 
-// hold button - need to add the round score to the global score
+// ########################################################
+// ********* HOLD FUNCTION *********
 
 document.querySelector('.btn-hold').addEventListener('click', function() {
     console.log('hold button');
@@ -90,13 +90,3 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
     nextPlayer();
 
 });
-
-// function init() {
-//     // Set all values = 0.
-//     scores = [0, 0];
-//     document.querySelector('.dice').style.display = 'none';
-//     document.getElementById('current-0').textContent = '0';
-//     document.getElementById('current-1').textContent = '0';
-//     document.getElementById('score-0').textContent = '0';
-//     document.getElementById('score-1').textContent = '0';
-// }
