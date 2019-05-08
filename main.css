@@ -213,5 +213,8 @@ i {
 .winner .player-name {
     font-weight: 500;
     color: gold;
-    font-size: 2em;
+}
+
+.winner .player-score {
+    color: gold;
 }
