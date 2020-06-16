@@ -189,11 +189,11 @@ i {
 }
 
 .btn-roll {
-    top: 450px;
+    top: 420px;
 }
 
 .btn-hold {
-    top: 500px;
+    top: 470px;
 }
 
 .dice {
@@ -207,14 +207,38 @@ i {
 
 .winner {
     background-color: #f7f7f7;
-    border: 4px solid gold;
 }
 
 .winner .player-name {
-    font-weight: 500;
-    color: gold;
+    font-weight: 300;
+    color: #EB4D4D;
 }
 
-.winner .player-score {
-    color: gold;
+.user_input {
+    background-color: orange;
+    margin: 1em;
+    display: flex;
+}
+
+.btn_submit {
+    display: relative;
+    left: 0%;
+}
+
+.final-score {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 520px;
+    color: #555;
+    font-size: 14px;
+    /* font-family: 'Lato'; */
+    text-align: center;
+    padding: 6px;
+    width: 160px;
+    text-transform: uppercase;
+}
+
+.final-score:focus {
+    outline: none;
 }
