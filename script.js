@@ -18,7 +18,7 @@
 // ########################################################
 // ********* Define the variables outside of any functions so they can be accessed by all (globally) *********
 
-let scores, roundScore, activePlayer, gamePlaying, finalScore;
+let scores, roundScore, activePlayer, gamePlaying, finalScore, previousDiceRoll, currentDiceRoll;
 
 init();
 
@@ -29,25 +29,38 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     if (gamePlaying) {
         // 1. Get a random number (1-6)
         let dice = Math.floor(Math.random() * 6 + 1);
+
+        if (currentDiceRoll) {
+            previousDiceRoll = currentDiceRoll;
+            currentDiceRoll = dice;
+        } else {
+            previousDiceRoll = 0;
+            currentDiceRoll = dice;
+        }
+
         console.log(dice);
+        console.log('previous dice roll:' + previousDiceRoll);
+        console.log('current dice roll:' + currentDiceRoll);
 
         // 2. Display the random number
         let diceDOM = document.querySelector('.dice');
         diceDOM.style.display = 'block';
         diceDOM.src = '/src/assets/dice-' + dice + '.png';
 
-        // 3. Add to score only if value is not 1
-        if (dice !== 1) {
-            // 1. Add score to roundscore
-            roundScore += dice;
 
-            // 2. Display roundscore
+        if (currentDiceRoll === 6 && previousDiceRoll === 6) {
+            previousDiceRoll = 0;
+            currentDiceRoll = 0;
+            document.querySelector('#score-' + activePlayer).textContent = 0;
+            nextPlayer();
+        } else if (dice !== 1) {
+            roundScore += dice;
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
         } else {
-            // Next Player
             nextPlayer();
-
-        };
+            previousDiceRoll = 0;
+            currentDiceRoll = 0;
+        }
     }
 
 });
@@ -70,6 +83,8 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
             gamePlaying = false
         } else {
             nextPlayer();
+            previousDiceRoll = 0;
+            currentDiceRoll = 0;
         };
 
     }
@@ -108,6 +123,8 @@ function init() {
     activePlayer = 0;
     gamePlaying = true;
     setFinalScore();
+    previousDiceRoll = 0;
+    currentDiceRoll = 0;
 
 
     document.querySelector('.dice').style.display = 'none';
