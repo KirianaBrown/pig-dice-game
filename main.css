@@ -207,14 +207,9 @@ i {
 
 .winner {
     background-color: #f7f7f7;
-    border: 4px solid gold;
 }
 
 .winner .player-name {
-    font-weight: 500;
-    color: gold;
-}
-
-.winner .player-score {
-    color: gold;
+    font-weight: 300;
+    color: #EB4D4D;
 }
